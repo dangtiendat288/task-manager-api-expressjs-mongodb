@@ -32,7 +32,7 @@ router.get("/tasks", auth, async (req, res) => {
   }
 
   try {
-    await req.user.populate({
+    const user = await req.user.populate({
       path: "tasks",
       match,
       options: {
@@ -41,7 +41,7 @@ router.get("/tasks", auth, async (req, res) => {
         sort,
       },
     });
-    res.send(req.user.tasks);
+    res.send(user.tasks);
   } catch (error) {
     res.status(500).send(error);
   }

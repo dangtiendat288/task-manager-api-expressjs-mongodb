@@ -24,17 +24,3 @@ module.exports = {
   sendWelcomeEmail,
   sendCancellationEmail,
 };
-
-// sgMail
-//   .send({
-//     to: "dangtiendat288@gmail.com",
-//     from: "dangtiendat288@gmail.com",
-//     subject: "This is my first email!",
-//     text: "I hope this one actually get to you.",
-//   })
-//   .then(() => {
-//     console.log("Email sent");
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
