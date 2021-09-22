@@ -31,6 +31,14 @@ router.get("/tasks", auth, async (req, res) => {
     sort[parts[0]] = parts[1] === "desc" ? -1 : 1;
   }
 
+  if (!req.query.limit) {
+    req.query.limit = "0";
+  }
+
+  if (!req.query.skip) {
+    req.query.skip = "0";
+  }
+
   try {
     await req.user.populate({
       path: "tasks",
