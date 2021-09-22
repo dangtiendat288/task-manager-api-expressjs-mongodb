@@ -49,7 +49,7 @@ router.get("/tasks", auth, async (req, res) => {
         sort,
       },
     });
-    res.send(req.user);
+    res.send(req.user.tasks);
   } catch (error) {
     res.status(500).send(error);
   }
