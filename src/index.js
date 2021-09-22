@@ -10,6 +10,10 @@ app.use(express.json()); // convert req.body into js object.
 app.use(userRouter);
 app.use(taskRouter);
 
+app.get("", (req, res) => {
+  res.send("Connected!");
+});
+
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
   console.log(process.env.SG_API_KEY);
